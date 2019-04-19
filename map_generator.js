@@ -6,6 +6,7 @@ class MapGenerator{
         this.maRoomWidth = maxRoomWidth;        
         this.miRoomHeight= minRoomHeight;
         this.maRoomHeight = maxRoomHeight;
+        this.rooms = []
     }
     
     buildRooms(){
@@ -15,9 +16,18 @@ class MapGenerator{
           var rh= floor(random(this.miRoomHeight, this.maRoomHeight));
           var rx = floor(random(2,(this.map.width-1)-rw));
           var ry = floor(random(2, (this.map.height-1)-rw))
-          var r = new Room(rx,ry,rw,rh)     
-           this.carveRoom(r);
-        }
+          var r = new Room(rx,ry,rw,rh)           
+            this.rooms.push(r);           
+          } 
+          for (var rm = 1; rm<this.rooms.length-1; rm++)
+          {
+            this.carveRoom(this.rooms[rm])
+            if(this.rooms[rm].intersects(this.rooms[rm+1]))
+            {
+            console.log('true')
+            }
+          }
+
     }
 
     carveRoom(room){

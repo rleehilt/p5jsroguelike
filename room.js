@@ -9,13 +9,15 @@ class Room{
     }
 
     intersects(other){
-            //(500 < windowsize && windowsize < 600)
-        if(this.x < other.x + other.width && this.x +this.width > other.x &&
-            this.y > other.y+ other.height && this.y+ height < other.y){
-            return false;
-        } else { return true;}
+ 
 
-
+        if(this.x+this.width<other.x | other.x + other.width<this.x | 
+            this.y + this.height< other.y | other.y + other.height<this.y)
+            {
+                return false;
+            } else {
+                return true;
+            }
     }
 
 }

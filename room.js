@@ -11,13 +11,9 @@ class Room{
     intersects(other){
  
 
-        if(this.x+this.width<other.x | other.x + other.width<this.x | 
-            this.y + this.height< other.y | other.y + other.height<this.y)
-            {
-                return false;
-            } else {
-                return true;
-            }
+         return !(this.x>other.x + other.width | this.x + this.width<other.x | 
+            this.y > other.y + other.height | this.y + this.h < other.y)
+         
     }
 
 }

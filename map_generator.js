@@ -17,17 +17,18 @@ class MapGenerator{
           var rx = floor(random(2,(this.map.width-1)-rw));
           var ry = floor(random(2, (this.map.height-1)-rw))
           var r = new Room(rx,ry,rw,rh)           
-            this.rooms.push(r);           
-          } 
-          for (var rm = 1; rm<this.rooms.length-1; rm++)
-          {
-            this.carveRoom(this.rooms[rm])
-            if(this.rooms[rm].intersects(this.rooms[rm+1]))
-            {
-            console.log('true')
-            }
+           
+          this.rooms.push(r);
+          //this.carveRoom(r);
+        } 
+           
+          for(var i = this.rooms.length-1; i>0; i--){
+             
           }
-
+          for(var k = 0; k<this.rooms.length; k++)
+          {
+            this.carveRoom(this.rooms[k])
+          }
     }
 
     carveRoom(room){

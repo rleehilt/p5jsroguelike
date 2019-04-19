@@ -1,11 +1,11 @@
 let generator;
 let map;
-let cols = 40;
-let rows = 40;
+let cols = 20;
+let rows = 20;
 function setup() {
-  createCanvas(600, 600);
-  var rms = floor(random(25, 40))
-  console.log(rms)
+  createCanvas(200, 200);
+  var rms = 2;
+  //console.log(rms)
   map = new Map(rows, cols, (width-1)/rows,rms);
   map.fill();
 
